@@ -60,12 +60,11 @@ function App() {
         <Stack spacing={2} direction="column">
           <ScrollContext.Provider value={{ isScroll,setScroll}}>
             <Header />
-            <Grid
+            <div
             style={{
               marginTop:'60px',
               display:'flex',
             }}
-            item xs={12}
             >
               {
                 !isMobile &&
@@ -78,7 +77,7 @@ function App() {
                 <CenterBar/>
                 <RightBar/>
               </div>
-            </Grid>
+            </div>
             {
             isScroll && (
               <Footer />
