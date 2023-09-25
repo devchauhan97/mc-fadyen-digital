@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: "65px",
-    backgroundColor: "green",
     padding: "12px",
     display: "flex",
     flexDirection: "column",

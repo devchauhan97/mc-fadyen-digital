@@ -69,7 +69,6 @@ function App() {
         <ScrollContext.Provider value={{ isScroll, setScroll }}>
           <Container
             sx={{
-              bgcolor: "#cfe8fc",
               height: "100vh",
               paddingLeft: "0px",
             }}

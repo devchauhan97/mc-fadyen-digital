@@ -9,7 +9,6 @@ import { useTheme } from "@emotion/react";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "red",
     height: "675px",
     display: "flex",
     flexDirection: "column",
