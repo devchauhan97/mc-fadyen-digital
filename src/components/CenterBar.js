@@ -21,8 +21,9 @@ const useStyles = makeStyles((theme) => ({
     top: "100px",
     left: "62%",
     float: "right",
-    [theme.breakpoints.down(600)]: {
-      left: "90%",
+    zIndex:'999999',
+    [theme.breakpoints.down("900")]: {
+      left: "93%",
     },
   },
 }));
@@ -44,13 +45,14 @@ export default function CenterBar(props) {
   };
   return (
     <Box className={classes.root} onScroll={handleScroll}>
+
+      <Icon classes={{ root: classes.hearIcon }}>
+        <img src="../assets/Heart.svg" />
+      </Icon>
       {isMobile ? (
         <Carousel />
       ) : (
         <>
-          <Icon classes={{ root: classes.hearIcon }}>
-            <img src="../assets/Heart.svg" />
-          </Icon>
           <Box component="div">
             <Icon>
               <img width="100%" src="../assets/image 409.png" />
