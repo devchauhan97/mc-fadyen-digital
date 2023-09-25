@@ -105,7 +105,10 @@ const Header = (props) => {
     setAnchor(event.currentTarget);
   };
   return (
-      <AppBar position="fixed" color="textSecondary" elevation={2}>
+      <AppBar 
+      position="fixed" 
+      color="textSecondary" 
+      elevation={2}>
         <Toolbar>
             <Box  className={classes.leftBar}>
               <Link

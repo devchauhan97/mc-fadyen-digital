@@ -1,80 +1,27 @@
-import * as React from 'react';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import { Box } from '@mui/material';
+import * as React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
 
 const options = [
   {
-    id: "XS", 
+    id: "XS",
   },
   {
-    id: "SM"
+    id: "SM",
   },
   {
-    id: "M"
-  },{
-    id: "L"
-  },{
-    id: "XXL"
+    id: "M",
+  },
+  {
+    id: "L",
+  },
+  {
+    id: "XXL",
   },
 ];
-
-export default function RadioButtonsGroup() {
- const [select,setSlected]=React.useState("SM")
-  
-  return (
-    <FormControl component="fieldset">
-      <Box component="div" >
-          <Box component="span" sx={{
-            fontWeight:'600'
-          }}>
-            SIZE 
-          </Box>
-          <Box component="span" m={1}>
-              {select}
-          </Box>
-      </Box>
-      {/* <FormLabel component="legend">SIZE {select}</FormLabel> */}
-
-      <div
-        style={{
-        display: "flex",
-       flexDirection: "row",
-       marginTop: "14px",
-      marginBottom: "29px",
-     }}
-     >
-      {/* <RadioGroup
-        defaultValue={options[0]}
-        onChange={(e, value) => {
-          const id = parseInt(value, 10);
-          const option = options.find((o) => o.id === id);
-          setSlected(option);
-        }}
-        
-      > */}
-
-
-        {
-//         options.map((o) => (
-//           <FormControlLabel
-//             value={o.id}
-//             control={<Radio />}
-//             xs={{
-//               borderRadius: "100px",
-// border: "1px solid var(--Light-Grey, #E5E5E5)",
-// background: "var(--White, #FFF)"
-//             }}
-//           />
-//         ))
-
-            options.map((o) => (
-            <span style={
-                      { 
-                        borderRadius: "94px",
+const useStyles = makeStyles((theme) => ({
+  sizes: {
+    borderRadius: "94px",
     border: "1px solid var(--Light-Grey, #E5E5E5)",
     background: "var(--White, #FFF)",
     width: "33px",
@@ -86,18 +33,80 @@ export default function RadioButtonsGroup() {
     display: "flex",
     textAlign: "center",
     margin: "0px 4px 0px 2px",
-     
-                      }
-
-                    }
-                    >
-                        {o.id}
-            </span>
-        ))
-        }
-
+    wordWrap: "break-word",
+    float: "left",
+  },
+}));
+export default function RadioButtonsGroup() {
+  const [select, setSlected] = React.useState("md");
+  const classes = useStyles();
+  return (
+    <>
+      <Box component="div">
+        <Box
+          component="span"
+          sx={{
+            fontWeight: "600",
+          }}
+        >
+          SIZE
+        </Box>
+        <Box component="span" m={1}>
+          {select}
+        </Box>
+      </Box>
+      {/* <FormLabel component="legend">SIZE {select}</FormLabel> */}
+      <Box
+        style={{
+          marginTop: "14px",
+          marginBottom: "29px",
+        }}
+      >
+        {/* <RadioGroup
+        defaultValue={options[0]}
+        onChange={(e, value) => {
+          const id = parseInt(value, 10);
+          const option = options.find((o) => o.id === id);
+          setSlected(option);
+        }}
         
-      </div>
-    </FormControl>
+      > */}
+
+        {
+          //         options.map((o) => (
+          //           <FormControlLabel
+          //             value={o.id}
+          //             control={<Radio />}
+          //             xs={{
+          //               borderRadius: "100px",
+          // border: "1px solid var(--Light-Grey, #E5E5E5)",
+          // background: "var(--White, #FFF)"
+          //             }}
+          //           />
+          //         ))
+
+          options.map((o) => (
+            // <span style={
+            //           {
+
+            //           }
+
+            //         }
+            //         >
+            //             {o.id}
+            // </span>
+            <Box
+              component="div"
+              m="{1}"
+              className={classes.sizes}
+              content="dddd"
+            >
+              {" "}
+              {o.id}
+            </Box>
+          ))
+        }
+      </Box>
+    </>
   );
 }

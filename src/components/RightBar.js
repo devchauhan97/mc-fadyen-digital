@@ -9,11 +9,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginTop: "65px",
-    width: "20%",
-    [theme.breakpoints.down(600)]: {
-      width: "100%",
-    },
+    backgroundColor: "green",
     padding: "12px",
+    display: "flex",
+    flexDirection: "column",
   },
   leftBar: {
     flexGrow: 1,
@@ -29,8 +28,12 @@ const useStyles = makeStyles((theme) => ({
   text: {
     width: "100%",
   },
-  productName: {
+  pName: {
     fontSize: "48px",
+    [theme.breakpoints.down(600)]: {
+      fontSize: "32px",
+    },
+    wordWrap: "break-word",
   },
   pTitle: {
     lineHeight: "120%",
@@ -64,16 +67,12 @@ export default function Right() {
   return (
     <Box component="div" className={classes.root}>
       <Box component="div">
-        <Typography variant="div" component="p" className={classes.productName}>
+        <Typography variant="div" component="p" className={classes.pName}>
           JONATHAN SIMKHAI
         </Typography>
       </Box>
       <Box component="div">
-        <Typography
-          variant="div"
-          component="div"
-          className={classes.pTitle}
-        >
+        <Typography variant="div" component="div" className={classes.pTitle}>
           Lurex Linen Viscose Jacket in Conchiglia
         </Typography>
       </Box>

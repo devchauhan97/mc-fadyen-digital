@@ -40,7 +40,6 @@ export default function Images(props) {
 }
 
 function Item(props) {
-  console.log(props);
   return (
     <Paper>
       {

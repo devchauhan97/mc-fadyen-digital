@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "YELLOW",
     font:'Helvetica',
-    width: '30%',
-    height: "500px",
+    // width: '100%',
+    // height: "500px",
     display: "flex",
     flexDirection: "column",
     overflow: "hidden",
