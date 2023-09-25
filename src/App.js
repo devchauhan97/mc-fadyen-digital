@@ -104,7 +104,10 @@ function App() {
                   </Grid>
                 </Grid>
               </Grid>
-              {isScroll &&  <Footer />}
+              {
+              isMobile || isScroll ?  
+              (<Footer />):''
+              }
             </Box>
           </Container>
         </ScrollContext.Provider>
