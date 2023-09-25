@@ -1,7 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { Icon, makeStyles } from "@material-ui/core";
+import { Icon, makeStyles, useMediaQuery } from "@material-ui/core";
 import { ScrollContext } from "../context";
+import Carousel  from "./Carousel";
+import { useTheme } from "@emotion/react";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -29,9 +31,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
 export default function CenterBar(props) {
   const { isScroll, setScroll } = React.useContext(ScrollContext);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const classes = useStyles();
+
   const handleScroll = (e) => {
     const bottom =
       e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
@@ -40,10 +46,12 @@ export default function CenterBar(props) {
     } else {
       setScroll(false);
     }
-    console.log(isScroll);
   };
   return (
     <Box className={classes.root} onScroll={handleScroll}>
+      {
+      isMobile? <Carousel /> : 
+      <>
       <Icon classes={{ root: classes.hearIcon }}>
         <img src="../assets/Heart.svg" />
       </Icon>
@@ -97,7 +105,9 @@ export default function CenterBar(props) {
           alt="The house from the offer."
           src="../assets/image 410 (2).png"
         />
+      </> 
       </>
+      }
     </Box>
   );
 }
